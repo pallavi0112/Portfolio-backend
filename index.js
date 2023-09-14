@@ -5,9 +5,9 @@ const port = process.env.PORT || 8000 ;
 const app = express() ;
 // app.use(cors({ origin: "*" }));
 const corsOptions = {
-    origin: 'https://pallavisoldey.netlify.app',
+    origin: ['https://pallavisoldey.netlify.app'],
     credentials: true, 
-  };
+};
 app.use(cors(corsOptions));
 app.use(express.json())
 
