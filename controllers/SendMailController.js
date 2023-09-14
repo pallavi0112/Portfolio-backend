@@ -6,6 +6,7 @@ const nodemailer = require('nodemailer')
 
 
 const SendEmails = async(req , res) =>{
+    console.log(req.body)
     try{
         const {name , email , message} = req.body
         const transporter = nodemailer.createTransport({

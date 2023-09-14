@@ -3,7 +3,12 @@ const cors = require('cors')
 const dotenv = require('dotenv').config();
 const port = process.env.PORT || 8000 ;
 const app = express() ;
-app.use(cors({ origin: "https://pallavisoldey.netlify.app/" }));
+// app.use(cors({ origin: "*" }));
+const corsOptions = {
+    origin: 'https://pallavisoldey.netlify.app',
+    credentials: true, 
+  };
+app.use(cors(corsOptions));
 app.use(express.json())
 
 app.use('/' , require('./routes/MailSendingRoutes'))
