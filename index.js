@@ -24,7 +24,10 @@ app.use(cors({ origin: "*" }));
 // });
 app.use(express.json())
 
-app.use('/' , require('./routes/MailSendingRoutes'))
+// app.use('/' , require('./routes/MailSendingRoutes'))
+app.use('/' , (req , res)=>{
+  res.status(200).json({message : "running api"})
+})
 
 app.listen(port , ()=>{
     console.log(`running on port ${port}`)
