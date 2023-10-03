@@ -9,23 +9,11 @@ app.use(cors({ origin: "*" }));
 //     credentials: true, 
 // };
 // app.use(cors(corsOptions));
-// app.use(cors());
-// app.use((req, res, next) => {
-// //   res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-//   res.setHeader("Access-Control-Allow-Origin", "https://pallavisoldey.netlify.app");
-//   res.setHeader("Access-Control-Allow-Methods", "'GET','POST','DELETE','UPDATE','PUT','PATCH',OPTIONS");
-//   // Headers("Access-Control-Allow-Headers", content-type, X-Auth-token, origin, authorization);
-//   if (req.method == "OPTIONS") {
-//     return res.sendStatus(200);
-//   }
 
-//   next();
-
-// });
 app.use(express.json())
 
 // app.use('/' , require('./routes/MailSendingRoutes'))
-app.use('/' , (req , res)=>{
+app.get('/' , (req , res)=>{
   res.status(200).json({message : "running api"})
 })
 
