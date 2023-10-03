@@ -3,12 +3,12 @@ const cors = require('cors')
 const dotenv = require('dotenv').config();
 const port = process.env.PORT || 8000 ;
 const app = express() ;
-// app.use(cors({ origin: "*" }));
-const corsOptions = {
-    origin: 'https://pallavisoldey.netlify.app',
-    credentials: true, 
-};
-app.use(cors(corsOptions));
+app.use(cors({ origin: "*" }));
+// const corsOptions = {
+//     origin: 'https://pallavisoldey.netlify.app',
+//     credentials: true, 
+// };
+// app.use(cors(corsOptions));
 // app.use(cors());
 // app.use((req, res, next) => {
 // //   res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
